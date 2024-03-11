@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayı Sıralama</title>
+</head>
+<body>
+  1den 99 a kadar olan sayıları sırala  
+  <button onclick="sirala()">Sırala</button>
+  <br><br>
+  <button id="btnRastgeleSec" onclick="rasatgeleSec()" disabled>Rastgele Sayı Seç</button>
+
+  <span id="sonuc"></span>
+
+
+  <script>
+    const sonuc=document.getElementById("sonuc");
+    function sirala(){
+      for (let i = 1; i < 100; i++) {
+        if(i % 10 === 1){
+            sonuc.innerHTML += "<br>";
+        }
+        sonuc.innerHTML +=`<span id="${i}">${i}</span>`
+      }
+      const btnRastgeleSec=document.getElementById("btnRastgeleSec");
+      btnRastgeleSec.disabled=false;
+    }
+function rasatgeleSec(){
+  const sayi=Math.floor(Math.random()*99) + 1 ;
+  const secilen=document.getElementById(sayi);
+  secilen.style.color="red";
+  secilen.style.fontWeight="bold";
+}
+  </script>
+</body>
+</html>
